@@ -20,21 +20,12 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Setup Go
-      uses: actions/setup-go@v3
-      with:
-        go-version: '1.23.4'  # Sử dụng phiên bản Go mà bạn đã sử dụng trên máy cục bộ
-
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-
-    - name: Build website
-      run: hugo --gc --minify
 
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v2.0.0
       with:
         publish-dir: public
+        netlify-config-path: netlify.toml
         production-deploy: true
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
