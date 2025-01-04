@@ -1,23 +1,31 @@
-name: Deploy to Netlify
+name: Deploy Hugo to Netlify
 
 on:
   push:
     branches:
-      - main
+      - main  # Hoặc branch mà bạn muốn trigger workflow
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: latest
-      - name: Build with Hugo
-        run: hugo 
-      - name: Deploy to Netlify
-        uses: South-Paw/action-netlify-cli@2.0.0
-        with:
-          args: deploy
-          token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+
+    - name: Build website
+      run: hugo --config netlify.toml
+
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v2.0.0
+      with:
+        publish-dir: public
+        production-deploy: true
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
