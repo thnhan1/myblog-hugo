@@ -22,6 +22,7 @@ command = "hugo --gc --minify"
   from = "/:lang/*"
   to = "/:lang/404"
   status = 404
+  conditions = { Language = ["en", "vi"] }
 
 [[redirects]]
   from = "/*"
