@@ -25,6 +25,7 @@ jobs:
       uses: nwtgck/actions-netlify@v1.2.3
       with:
         publish-dir: ./public
+        netlify-config-path: netlify.toml
         production-deploy: true
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
