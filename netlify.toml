@@ -1,0 +1,18 @@
+# Settings in the [build] context are global and are applied to
+# all contexts unless otherwise overridden by more specific contexts.
+
+[build]
+  base = "/"
+  publish = "public"
+  command = "hugo --gc --themesDir themes/hugo-blog-awesome"
+
+[build.environment]
+  HUGO_VERSION = "0.123.8"
+  GO_VERSION = "1.22.1"
+  NODE_VERSION = "20"
+  HUGO_THEME = "hugo-blog-awesome"
+
+# Deploy Preview context: all deploys generated from
+# a pull/merge request will inherit these settings.
+[context.deploy-preview]
+command = "hugo --gc --themesDir themes/hugo-blog-awesome -b $DEPLOY_PRIME_URL"

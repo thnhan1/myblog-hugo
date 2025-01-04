@@ -1,0 +1,34 @@
+## HOME ##
+- id: "home.home"
+  translation: "Trang Chủ"
+  
+- id: "home.recent_posts"
+  translation: "Bài viết gần đây"
+
+- id: "home.see_all_posts"
+  translation: "Xem tất cả"
+
+## SINGLE ##
+- id: "single.table_of_contents"
+  translation: "Mục lục"
+
+## FOOTER ##
+- id: "footer.go_to_top"
+  translation: "Về đầu trang"
+
+- id: "footer.disclaimer"
+  translation: "Powered by <a href=\"https://github.com/hugo-sid/hugo-blog-awesome\" target=\"_blank\" rel=\"noopener\">Hugo blog awesome</a>."
+
+## ERRORS ##
+- id: "errors.404"
+  translation: "404 Không tìm thấy"
+
+- id: "errors.404_description"
+  translation: "Đường dẫn bạn truy cập không tồn tại."
+
+## NAV ##
+- id: "nav.about"
+  translation: "About"
+
+- id: "nav.posts"
+  translation: "Posts"
