@@ -24,7 +24,6 @@ jobs:
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v2.0.0
       with:
-        publish-dir: public
         netlify-config-path: netlify.toml
         production-deploy: true
       env:
