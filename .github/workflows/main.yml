@@ -15,7 +15,7 @@ jobs:
         with:
           hugo-version: latest
       - name: Build with Hugo
-        run: hugo
+        run: hugo --version
       - name: Deploy to Netlify
         uses: South-Paw/action-netlify-cli@2.0.0
         with:
