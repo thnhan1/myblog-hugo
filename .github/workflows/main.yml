@@ -27,8 +27,6 @@ jobs:
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: '0.140.2'  # Sử dụng phiên bản Hugo giống như trên máy cục bộ
 
     - name: Build website
       run: hugo --gc --minify
