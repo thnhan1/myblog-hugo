@@ -23,12 +23,12 @@ jobs:
     - name: Setup Go
       uses: actions/setup-go@v3
       with:
-        go-version: '1.22.1'
+        go-version: '1.23.4'
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.123.8'
+        hugo-version: '0.140.2'
 
     - name: Build website
       run: hugo --gc --minify
