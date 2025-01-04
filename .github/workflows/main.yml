@@ -1,9 +1,9 @@
-name: Deploy Hugo to Netlify
+name: Deploy Hugo site to Netlify
 
 on:
   push:
     branches:
-      - main  # Hoặc branch mà bạn muốn trigger workflow
+      - master # or the branch you want to deploy
 
 jobs:
   build:
@@ -12,22 +12,20 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        submodules: true  # Cập nhật submodule
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
       with:
-        node-version: '20'
+        hugo-version: 'latest'
 
+    - name: Build site
+      run: hugo --minify
 
     - name: Deploy to Netlify
-      uses: nwtgck/actions-netlify@v2.0.0
+      uses: nwtgck/actions-netlify@v1.2.3
       with:
-        netlify-config-path: netlify.toml
+        publish-dir: ./public
         production-deploy: true
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        HUGO_ENV: "production"
-        HUGO_ENABLEGITINFO: "true"
