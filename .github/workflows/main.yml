@@ -31,7 +31,7 @@ jobs:
         hugo-version: '0.123.8'
 
     - name: Build website
-      run: hugo --gc --minify --config netlify.toml
+      run: hugo --gc --minify
 
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v2.0.0
