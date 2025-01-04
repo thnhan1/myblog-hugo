@@ -16,7 +16,7 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: 'latest'
+        hugo-version: '0.140.2'  # Chỉ định phiên bản Hugo cụ thể, bạn có thể thay đổi phiên bản này theo yêu cầu của bạn
 
     - name: Build website
       run: hugo --config netlify.toml
