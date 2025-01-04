@@ -17,7 +17,7 @@ jobs:
       - name: Build with Hugo
         run: hugo
       - name: Deploy to Netlify
-        uses: netlify/actions/cli@v1
+        uses: South-Paw/action-netlify-cli@2.0.0
         with:
           args: deploy
           token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
