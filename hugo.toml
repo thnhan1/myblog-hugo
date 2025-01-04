@@ -1,6 +1,5 @@
 # using base url from environtment variable
 baseURL = "/"
-languageCode = 'en-us'
 title = 'Nhan blog'
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
@@ -79,7 +78,7 @@ pageRef="/projects"
 
 [languages.vi]
 languageName = "Tiếng Việt"
-languageCode = "vi-vn"
+languageCode = "vi"
 weight = 20
 contentDir = "content/vi"
 urlprefix = "/vi"
@@ -113,4 +112,3 @@ name="Dự án"
 weight=4
 url="/projects"
 pageRef="/projects"
-
