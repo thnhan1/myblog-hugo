@@ -16,7 +16,15 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.140.2'  # Chỉ định phiên bản Hugo cụ thể, bạn có thể thay đổi phiên bản này theo yêu cầu của bạn
+        hugo-version: '0.92.2'  # Chỉ định phiên bản Hugo cụ thể, bạn có thể thay đổi phiên bản này theo yêu cầu của bạn
+
+    - name: Setup Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: '1.17'
+
+    - name: Install Hugo theme
+      run: git submodule update --init --recursive
 
     - name: Build website
       run: hugo --config netlify.toml
