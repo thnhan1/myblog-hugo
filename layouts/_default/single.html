@@ -11,20 +11,22 @@
                     <time datetime="{{ $ISO_time }}" itemprop="datePublished"> {{ . | time.Format $configDateFormat }} </time>
                 </div>
                 {{ end }}
+                
                 <div class="post-taxonomies">
-                    {{ with .Site.Taxonomies.categories }}
+                    {{ with .Params.categories }}
                     <div class="categories">
                         <strong>Categories:</strong>
-                        {{- range $name, $taxonomy := . -}}
-                        <a href="{{ $taxonomy.Page.Permalink }}" class="tag">{{ $name }} ({{ len $taxonomy.Pages }})</a>
+                        {{- range . -}}
+                            <a style="font-family: monospace;" href="{{ absLangURL (printf "categories/%s" (urlize .)) }}" class="tag">&nbsp;#{{ . }}</a>
                         {{- end -}}
                     </div>
                     {{ end }}
+
                     {{ with .Params.tags }}
                     <div class="post-tags">
                         <strong>Tags:</strong>
                         {{ range . }}
-                        <a href="{{ absLangURL (printf "tags/%s" (urlize .)) }}" class="tag">{{ . }}</a>
+                        <a style="font-family: monospace;" href="{{ absLangURL (printf "tags/%s" (urlize .)) }}" class="tag">&nbsp;#{{ . }}</a>
                         {{ end }}
                     </div>
                     {{ end }}
