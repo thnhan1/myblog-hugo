@@ -69,12 +69,12 @@ weight=3
 url="/posts"
 pageRef="/posts"
 
-[[languages.en.menu.main]]
-identifier="Projects"
-name="Projects"
-weight=4
-url="/projects"
-pageRef="/projects"
+# [[languages.en.menu.main]]
+# identifier="Projects"
+# name="Projects"
+# weight=4
+# url="/projects"
+# pageRef="/projects"
 
 [languages.vi]
 languageName = "Tiếng Việt"
@@ -106,12 +106,12 @@ weight=3
 url="/posts"
 pageRef="/posts"
 
-[[languages.vi.menu.main]]
-identifier="Projects"
-name="Dự án"
-weight=4
-url="/projects"
-pageRef="/projects"
+# [[languages.vi.menu.main]]
+# identifier="Projects"
+# name="Dự án"
+# weight=4
+# url="/projects"
+# pageRef="/projects"
 
 
 [[params.socialIcons]]

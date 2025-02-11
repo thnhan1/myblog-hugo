@@ -33,3 +33,10 @@
 
 - id: "nav.posts"
   translation: "Posts"
+
+- id: "notFoundTitle"
+  translation: "Page NOT FOUND"
+- id: "goHome"
+  translation: "Go Home"
+- id: "notFoundMessage"
+  translation: "Sorry, the page you are looking for does not exist."

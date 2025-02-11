@@ -32,3 +32,10 @@
 
 - id: "nav.posts"
   translation: "Posts"
+
+- id: "notFoundTitle"
+  translation: "Không tìm thấy trang"
+- id: "goHome"
+  translation: "Về trang chủ"
+- id: "notFoundMessage"
+  translation: "XIn lỗi, trang bạn tìm không tồn tại"

@@ -1,6 +1,6 @@
 +++
 date = '2025-01-04T23:13:19+07:00'
-draft = false
+draft = true
 title = 'nvim config for golang dev'
 tags = ['nvim', 'golang', 'dotfiles']
 categories = ['nvim', 'golang', 'dotfiles']
