@@ -1,0 +1,17 @@
+# Hugo
+/public/
+/resources/_gen/
+/node_modules/
+/.DS_Store
+Thumbs.db
+
+# Optional OS files
+*.swp
+*~
+.project
+.idea/
+.vscode/
+
+# Optional IDE files
+*.sublime-project
+*.sublime-workspace

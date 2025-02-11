@@ -1,0 +1,132 @@
+# using base url from environtment variable
+baseURL = "/"
+title = 'Nhan blog'
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+enableEmoji = true
+theme = "hugo-blog-awesome"
+author="Tran Nhan"
+[languages.en.params.author]
+name = "Tran Nhan"
+description = "A blog about programming, technology, and life"
+avatar = "/images/avatar.jpeg"
+[languages.vi.params.author]
+name = "Tran Nhan"
+description = "Một blog về lập trình, công nghệ và cuộc sống"
+avatar = "/images/avatar.jpeg"
+
+
+ignoreLogs = ['warning-goldmark-raw-html']
+
+
+[markup]
+[markup.goldmark.renderer]
+unsafe = true
+[markup.highlight]
+codeFences = true
+guessSyntax = true
+lineNoStart = 1
+lineNos = true
+noClasses = true
+style = "dracula"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+
+
+
+############# language settings ################
+
+[languages]
+[languages.en]
+languageName = "English"
+languageCode = "en"
+weight = 10
+contentDir = "content/en"
+urlprefix = "/en"
+prefixurls = true
+
+[languages.en.menu]
+[[languages.en.menu.main]]
+identifier="Home"
+pageRef="/"
+name="Home"
+weight=1
+
+[[languages.en.menu.main]]
+identifier="About"
+pageRef="/about"
+name="About"
+weight=2
+url="/"
+
+[[languages.en.menu.main]]
+identifier="Posts"
+name="Posts"
+weight=3
+url="/posts"
+pageRef="/posts"
+
+[[languages.en.menu.main]]
+identifier="Projects"
+name="Projects"
+weight=4
+url="/projects"
+pageRef="/projects"
+
+[languages.vi]
+languageName = "Tiếng Việt"
+languageCode = "vi"
+weight = 20
+contentDir = "content/vi"
+urlprefix = "/vi"
+prefixurls = true
+
+[languages.vi.menu]
+[[languages.vi.menu.main]]
+identifier="Home"
+pageRef="/"
+name="Trang chủ"
+weight=1
+
+[[languages.vi.menu.main]]
+identifier="About"
+pageRef="/about"
+name="Về tôi"
+weight=2
+url="/"
+
+[[languages.vi.menu.main]]
+identifier="Posts"
+name="Bài viết"
+defaultColor="dark"
+weight=3
+url="/posts"
+pageRef="/posts"
+
+[[languages.vi.menu.main]]
+identifier="Projects"
+name="Dự án"
+weight=4
+url="/projects"
+pageRef="/projects"
+
+
+[[params.socialIcons]]
+name="Rss"
+url="index.xml"
+icon="rss"
+
+[[params.socialIcons]]
+name="Github"
+url="https://github.com/thnhan1"
+icon="github"
+
+[[params.socialIcons]]
+name="Linkedin"
+url="https://www.linkedin.com/in/trannhan10/"
+icon="linkedin"
+[params]
+goToTop = true

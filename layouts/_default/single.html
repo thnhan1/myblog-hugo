@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">{{ .Title }}</h1>
+                {{ $configDateFormat := .Site.Params.dateFormat | default ":date_medium" }}
+                {{ with .Date }}
+                {{ $ISO_time := dateFormat "2006-01-02T15:04:05-07:00" . }}
+                <div class="post-meta">
+                    <time datetime="{{ $ISO_time }}" itemprop="datePublished"> {{ . | time.Format $configDateFormat }} </time>
+                </div>
+                {{ end }}
+                
+                <div class="post-taxonomies">
+                    {{ with .Params.categories }}
+                    <div class="categories">
+                        <strong>Categories:</strong>
+                        {{- range . -}}
+                            <a style="font-family: monospace;" href="{{ absLangURL (printf "categories/%s" (urlize .)) }}" class="tag">&nbsp;#{{ . }}</a>
+                        {{- end -}}
+                    </div>
+                    {{ end }}
+
+                    {{ with .Params.tags }}
+                    <div class="post-tags">
+                        <strong>Tags:</strong>
+                        {{ range . }}
+                        <a style="font-family: monospace;" href="{{ absLangURL (printf "tags/%s" (urlize .)) }}" class="tag">&nbsp;#{{ . }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </header>
+            {{ partial "toc.html" . }}
+            <div class="page-content">
+                {{ .Content }}
+            </div>
+        </article>
+        {{- partial "comments.html" . -}}
+    </main>
+</div>
+{{ end }}
